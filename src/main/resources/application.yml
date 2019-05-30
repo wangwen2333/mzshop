@@ -1,0 +1,15 @@
+server:
+  port: 9090
+# 数据源、视图配置
+spring:
+ datasource:
+   driver-class-name: com.mysql.jdbc.Driver
+   url: jdbc:mysql://localhost:3306/muzishop?useUnicode=true&characterEncoding=utf8
+   username: root
+   password: root
+ resources:
+     static-locations: classpath:/templates  #访问静态页面
+ mvc:
+  view:
+   prefix: /
+   suffix: .html

@@ -1,0 +1,376 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script language="javascript" type="text/javascript"> 
+            var skinPath = "/templates/pccommon";
+            var HasWapRight = true;
+            var IsOpenStores = false;
+            var IsOpenReferral = 1;
+            var HasVshopRight = true;
+            var ImageServerUrl="";
+  var ImageUploadPath="/admin/UploadHandler.ashx?action=newupload";
+        </script>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-language" content="zh-CN" />
+<link rel="icon" type="image/x-icon" href="http://www.snnfsc.comFavicon.ico" media="screen" />
+<link rel="shortcut icon" type="image/x-icon" href="http://www.snnfsc.comFavicon.ico" media="screen" />
+<meta name="author" content="Hishop development team" />
+<meta name="GENERATOR" content="2.3.1" />
+
+    <script src="../js/clientjump.js"></script>
+    <title>会员注册 - 农夫商城</title>
+
+    <meta name="description" content="农夫商城网络食品购物平台" />
+<meta name="keywords" content="农夫商城、桐城食品、桐城网络购物商城、桐城蔬菜、桐城生鲜产品、桐城餐饮食材、桐城猪肉" />
+
+    <script src="../js/jquery-1.6.4.min.js" type="text/javascript"></script>
+    <script src="../js/icheck.min.js"></script>
+    <script type="text/javascript" src="../js/nav.js"></script>
+    <script src="../js/globals.js" type="text/javascript"></script>
+    <script src="../js/region.helper.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../css/nav.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" rev="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css" media="" />
+    <link rel="stylesheet" href="../css/menu.css" type="text/css" media="" />
+    <link href="../css/iconfont.css" rel="Stylesheet" />
+    <link rel="stylesheet" href="../css/region.css" type="text/css" media="" />
+
+</head>
+<style>
+    * { box-sizing: content-box; }
+    body { background: #fbfbfb; }
+</style>
+<body>
+    <script src="../js/onlineserver.js" type="text/javascript"></script>
+<!--显示位置-->
+<input name="register$ctl00$_$Common_OnlineServer1$_$hidPosition" type="hidden" id="hidPosition" value="1" />
+<!--纵向坐标-->
+<input name="register$ctl00$_$Common_OnlineServer1$_$hidYPostion" type="hidden" id="hidYPostion" value="120" />
+<div id="qq_right" class="qqrighttop">
+    
+    <div class="a">
+        <div class="b" id="b" onmouseover="showKefu(this);"><span></span></div>       
+        <div class="cc" id="mainonline">
+            <a type="button" class="close" onclick="closekf(this);"></a>
+             <div class="c">
+            
+                    <div name="checkQQOnLine" Number='3193258108'><a target="blank" href="http://wpa.qq.com/msgrd?v=3&uin=3193258108&site=qq&menu=yes"><img border="0" SRC="../picture/e69fea309d2f4d298becd1b4ae73a07c.gif" alt="点击这里联系客服农夫商城客服"></a>
+                        <br />
+                        农夫商城客服
+                    </div>                  
+                
+                     
+        </div>
+        </div>
+        <div class="d"></div>
+    </div>
+    
+</div>
+<script type="text/javascript">
+    var online = new Array();
+    setTimeout(function () {
+        $("div[name=checkQQOnLine]").each(function () {
+            var dvQQOnLine = $(this);
+            var qqNumber = $(this).attr("Number") + ":";
+            var url = "http://webpresence.qq.com/getonline?Type=1&" + qqNumber
+            jQuery.getScript(url, function () {
+                if (online.length > 0 && online[0] == 0) {
+                    $("img:first", $(dvQQOnLine)).attr("src", "/utility/pics/qq_off_line.jpg");
+                }
+            });
+
+        });
+    }, 1000)
+</script>
+    <div id="header" class="top">
+        <div class="header_logo">
+            <div class="top1">
+                <div class="logo1">
+                    <div class="logo cssEdite" type="logo" id="logo_1" >
+<a href="/">
+<img src="../picture/20170109110145_6701.jpg" />
+</a>
+</div>
+
+                </div>
+                <div class="xyonghu">欢迎注册</div>
+            </div>
+
+            <div class="top2">我已注册，现在就去<a href="/user/toLogin">登录</a></div>
+        </div>
+
+
+    </div>
+
+<form name="aspnetForm" method="post" action="./Register" id="aspnetForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNzA2NDkyNTI2D2QWAmYPZBYCZg9kFgRmD2QWAmYPZBYCAhMPZBYCZg9kFgICBg8WAh4LXyFJdGVtQ291bnQCARYCZg9kFgRmDxUCDWNoZWNrUVFPbkxpbmUKMzE5MzI1ODEwOGQCAg8VARLlhpzlpKvllYbln47lrqLmnI1kAgIPZBYEAgkPFgIeBFRleHQFBumCrueusWQCHw9kFgJmD2QWAgIBDxYCHwACDBYYZg9kFgJmD2QWAmYPFQIdaHR0cDovL3RjZ3hzLmdvdi5jbi9pbmRleC5waHAP5qGQ5Z+O5L6b6ZSA56S+ZAIBD2QWAmYPZBYCZg8VAhVodHRwOi8vd3d3LmFocmN1LmNvbS8S5a6J5b695Yac5ZWG6ZO26KGMZAICD2QWAmYPZBYCZg8VAihodHRwOi8vd3d3LnRvbmdjaGVuZy5nb3YuY24vaW5kZXguYWN0aW9uEuahkOWfjuW4guaUv+W6nOe9kWQCAw9kFgJmD2QWAmYPFQIcaHR0cDovL2Jicy50b25nY2hlbmcuZ292LmNuLxLmoZDln47luILmsJHorrrlnZtkAgQPZBYCZg9kFgJmDxUCGWh0dHA6Ly93d3cuaXRvbmdjaGVuZy5jYy8J5qGQ5Z+O572RZAIFD2QWAmYPZBYCZg8VAihodHRwOi8vd3d3LnRjc2hhbmdoYWkuY29tL2Jicy9wb3J0YWwucGhwEuahkOWfjuS6uuWcqOS4iua1t2QCBg9kFgJmD2QWAmYPFQIVaHR0cDovL3d3dy4xMDAxMC5jb20vDOS4reWbveiBlOmAmmQCBw9kFgJmD2QWAmYPFQIhaHR0cDovL2FoLjE4OS5jbi9uZXR1cC9pbmRleC5odG1sGOS4reWbveeUteS/oee9keS4iue8tOi0uWQCCA9kFgJmD2QWAmYPFQIpaHR0cDovL3d3dy4xMDA4Ni5jbi9haC9pbmRleF81NTFfNTU2Lmh0bWwY5Lit5Zu956e75Yqo572R5LiK57y06LS5ZAIJD2QWAmYPZBYCZg8VAnNodHRwOi8vZmxpZ2h0cy5jdHJpcC5jb20vP2FsbGlhbmNlaWQ9MTExOSZzaWQ9NzI2NzE2Jm91aWQ9MDAwNDAxYXBwLSZ1dG1fbWVkaXVtPSZ1dG1fY2FtcGFpZ249JnV0bV9zb3VyY2U9JmlzY3RyaXA9D+mjnuacuuelqOe9kei0rWQCCg9kFgJmD2QWAmYPFQIZaHR0cDovL3d3dy5rdWFpZGkxMDAuY29tLxLlv6vpgJLljZXlj7fmn6Xor6JkAgsPZBYCZg9kFgJmDxUCHWh0dHA6Ly93d3cuMTIzMDYuY24vbW9ybWh3ZWIvFDEyMzA2572R5LiK54Gr6L2m56WoZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAQURcmVnaXN0ZXIkY2hrQWdyZWVL4RDH5+9AEf3Wn1LPXzs57UAsMw==" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="799CC77D" />
+</div>
+    <div class="zhuce">
+        <input type="hidden" name="register$hidIsIsSurportName" id="hidIsIsSurportName" value="1" />
+        <input type="hidden" name="register$hidIsValidateEmail" id="hidIsValidateEmail" value="0" />
+        <div></div>
+        <div class="zhuce_con">
+            <div class="zhuce_con_l">
+                <div style="clear:both;"></div>
+                <div>
+                    <div class="zc_name" id="divNameOK">
+                        <em>会员名</em>
+                        <span>
+                            <input name="register$txtUserNameOK" type="text" maxlength="20" id="txtUserNameOK" tabindex="1" class="zhuce_input1" name="txtUserNameOK" onfocus="nameokfocus()" onblur="checkNameLength(false)" placeholder="2-20个字符" />
+                        </span>
+                        <span id="txtUserNameOK_succeed" class="zc_tishi">账号可用</span>
+                        <span class="zc_tishi2" id="txtUserNameOK_error"></span>
+                    </div>
+                    <div class="zc_name">
+                        <em id="utitle">邮箱</em>
+                        <span><input name="register$txtUserName" type="text" id="txtUserName" tabindex="2" class="zhuce_input1" name="txtUserName" onblur="checkLength(this)" /></span>
+                        <script type="text/javascript">
+                            var c;
+                            function checkLength(thisObj) {
+                                var value = thisObj.value;
+                                if (value.trim().length == 0) return;
+                                if ($("#divNameOK").is(":hidden")) {
+                                    if ($("#utitle").html() == "邮箱") {
+                                        validateRegExp.username = "^\\w+((-\\w+)|(\\.\\w+))*\\@[A-Za-z0-9]+((\\.|-)[A-Za-z0-9]+)*\\.[A-Za-z0-9]+$";
+                                        validatePrompt.username.error.beUsed = "该邮箱已被使用，请更换，如果您是&quot;{1}&quot;，请<a href='/user/login.aspx' class='flk13'>登录</a>";
+                                        validatePrompt.username.error.badFormat = "用户名只能用邮箱注册";
+                                    }
+                                    else if ($("#utitle").html() == "手机") {
+                                        validateRegExp.username = /^0?(13|15|18|14|17)[0-9]{9}$/g;
+                                        validatePrompt.username.error.beUsed = "该手机已被使用，请更换，如果您是&quot;{1}&quot;，请<a href='/user/login.aspx' class='flk13'>登录</a>";
+                                        validatePrompt.username.error.badFormat = "用户名只能用手机注册";
+                                    }
+                                }
+
+
+                                var r = /^0?(13|15|18|14|17)[0-9]{9}$/g;
+
+                                if (r.test(value)) {
+                                    $("#normaldiv").css("display", "block");
+                                    if ($("#hidIsVidateImageCode").val() == "0") {
+                                        $("#divimgcode").css("display", "none");
+                                    }
+                                    if (c != value) {
+                                        refreshCode();
+                                    }
+                                    c = value;
+                                    if ($("#emimgcode").text() == "邮箱验证码") {
+                                        refreshCode();
+                                    }
+                                    $("#txtNumber").val("");
+                                    $("#emimgcode").text("图形验证码");
+                                    $("#imgVerifyCode").show();
+                                    $("#btnSendEmail").hide();
+                                    $("#spanimagecode").show();
+                                }
+                                else {
+                                    $("#normaldiv").css("display", "none");
+                                    $("#divimgcode").css("display", "block");
+                                    if ($("#hidIsValidateEmail").val() == "1") {
+                                        $("#emimgcode").text("邮箱验证码");
+                                        $("#imgVerifyCode").hide();
+                                        $("#btnSendEmail").show();
+                                        $("#spanimagecode").hide();
+                                        refreshCode2();
+                                    }
+                                }
+                            }
+
+                        </script>
+
+
+                        <span id="txtUserName_succeed" class="zc_tishi">账号可用</span>
+                        <span class="zc_tishi2" id="txtUserName_error"></span>
+                    </div>
+                    <div class="zc_name">
+                        <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密码</em> <span>
+                            <input name="register$txtPassword" type="password" id="txtPassword" tabindex="4" class="zhuce_input1" name="txtPassword" />
+                        </span>
+                        <span id="txtPassword_succeed" class="zc_tishi">密码可用</span>
+                        <span class="zc_tishi2" id="txtPassword_error"></span>
+                    </div>
+
+                    <div class="zc_anquan" id="pwdstrength">
+                        <em>密码安全度</em> <b></b>
+                    </div>
+                    <div></div>
+                    <div class="zc_name">
+                        <em>确认密码</em>
+                        <span><input name="register$txtPassword2" type="password" id="txtPassword2" tabindex="5" class="zhuce_input1" name="txtPassword2" /></span>
+                        <span id="txtPassword2_succeed" class="zc_tishi">密码输入正确</span>
+                        <span class="zc_tishi2" id="txtPassword2_error"></span>
+                    </div>
+                    
+                    
+                    
+                    <div id="register_divimgcode" class="zc_name">
+                        <input type="hidden" name="register$hidIsVidateImageCode" id="hidIsVidateImageCode" value="1" />
+                        <em class="yanzhengma" id="emimgcode">图形验证码</em>
+                        <span><input name="register$txtNumber" type="text" maxlength="4" id="txtNumber" tabindex="9" class="zhuce_input2" autocomplete="off" /></span>
+                        <div>
+                            <span class="yanzheng_input2"><img id="imgVerifyCode" src='' style="vertical-align: middle; border-style: none;" alt="" /></span>
+                            <span class="yanzheng_input4" id="spanimagecode">看不清？<a href="javascript:refreshCode();">换一张</a></span>
+                            <span><input type="button" value="发送验证码" id="btnSendEmail" class="yanzheng_input3" style="display:none;" /></span>
+                            <span id="txtNumber_succeed" class="zc_tishi">验证码输入正确</span>
+                            <span class="zc_tishi2" id="txtNumber_error"></span>
+                        </div>
+                    </div>
+                    <div class="zc_name" id="normaldiv" style="display:none;">
+                        <em class="yanzhengma">短信验证码</em>
+                        <span><input name="register$txtPhoneCode" type="text" maxlength="4" id="txtPhoneCode" tabindex="11" class="zhuce_input2" autocomplete="off" /></span>
+                        <div class="yanzheng_input2">
+                            <span><input id="phoneVerifyCode" type="button" value="获取验证码" class="yanzheng_input3" /></span>
+                        </div>
+                        <span id="txtPhoneCode_succeed" class="zc_tishi">手机验证码输入正确</span>
+                        <span class="zc_tishi2" id="txtPhoneCode_error"></span>
+                    </div>
+                    <div class="zc_xieyi">
+                        <span class="xy_xuanze" name="chkAgree"><input id="chkAgree" type="checkbox" name="register$chkAgree" checked="checked" tabindex="12" /></span><em>
+                            我已阅读并同意<a href="RegisterAgreement.aspx"> 会员注册协议 </a>
+                        </em>
+                    </div>
+                    <div>
+                        <input name="register$btnRegister" type="button" id="register_btnRegister" class="xieyi_btn" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" language="javascript">
+        document.getElementById('imgVerifyCode').src = "VerifyCodeImage.aspx";
+        function refreshCode() {
+            var img = document.getElementById("imgVerifyCode");
+
+            if (img != null) {
+                var currentDate = new Date();
+                img.src = "VerifyCodeImage.aspx?t=" + currentDate.getTime();
+            }
+        }
+
+        function refreshCode2() {
+            var currentDate = new Date();
+            var url = "VerifyCodeImage.aspx?t=" + currentDate.getTime();
+            $.post(url);
+        }
+
+        $("#btnSendEmail").bind("click", function () {
+            var tempemail = $("#txtUserName").val();
+            var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*([a-zA-Z0-9])+\.([a-zA-Z]{1,4})$/;
+            if (!myreg.test(tempemail)) {
+                alert('请输入正确的邮箱');
+                return false;
+            }
+            $.ajax({
+                type: "POST",
+                url: "/Handler/MemberHandler.ashx?action=VerficationEmail",
+                contentType: "application/x-www-form-urlencoded; charset=utf-8",
+                dataType: "json",
+                data: { email: tempemail },
+                success: function (result) {
+                    if (result.success) {
+                        alert(result.msg);
+                    } else {
+                        alert(result.msg);
+                    }
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            if ($("#hidIsIsSurportName").val() == "0") {
+                $("#divNameOK").hide();//用户名显示
+            }
+
+            $("#phoneVerifyCode").click(function () {
+                if ($("#hidIsVidateImageCode").val() == "1" && $("#txtNumber").val().length == 0) {
+                    alert("请输入图形验证码");
+                    return;
+                }
+                var phone = document.getElementById("txtUserName").value;
+                var imgCode = $("#txtNumber").val();
+
+                $.ajax({
+                    type: "POST",
+                    url: "Handler/MemberHandler.ashx?action=SendRegisterPhoneCode",
+                    data: { Phone: phone, imgCode: imgCode },
+                    success: function (result) {
+                        if (result.success == "true") {
+
+                            var time = 1000;
+                            var interval;
+                            var count = 0;
+
+                            function fun() {
+
+                                count++;
+
+                                if (count >= 60) {
+                                    $("#phoneVerifyCode").attr("disabled", false);
+                                    $("#phoneVerifyCode").attr("value", "重新发送");
+
+                                    clearInterval(interval);
+                                }
+                                else {
+                                    $("#phoneVerifyCode").attr("value", "发送成功（" + (60 - count) + ")");
+                                }
+                            }
+
+                            $("#phoneVerifyCode").attr("disabled", "true");
+                            interval = setInterval(fun, time);
+                        }
+                        else {
+                            alert(result.msg);
+                        }
+                    }
+                });
+
+            });
+        });
+
+    </script>
+
+
+    <script type="text/javascript" src="js/validate.js"></script>
+    
+<style>
+.footer{ background:none; border:none; margin:0px; padding:0px;}
+.footer .bottom{ border:none;margin:0px; padding:0px;}
+</style>
+<div class="bottom">
+       <div class="footer_link">
+        
+<a href='http://tcgxs.gov.cn/index.php' target="_blank">桐城供销社</a>|
+<a href='http://www.ahrcu.com/' target="_blank">安徽农商银行</a>|
+<a href='http://www.tongcheng.gov.cn/index.action' target="_blank">桐城市政府网</a>|
+<a href='http://bbs.tongcheng.gov.cn/' target="_blank">桐城市民论坛</a>|
+<a href='http://www.itongcheng.cc/' target="_blank">桐城网</a>|
+<a href='http://www.tcshanghai.com/bbs/portal.php' target="_blank">桐城人在上海</a>|
+<a href='http://www.10010.com/' target="_blank">中国联通</a>|
+<a href='http://ah.189.cn/netup/index.html' target="_blank">中国电信网上缴费</a>|
+<a href='http://www.10086.cn/ah/index_551_556.html' target="_blank">中国移动网上缴费</a>|
+<a href='http://flights.ctrip.com/?allianceid=1119&sid=726716&ouid=000401app-&utm_medium=&utm_campaign=&utm_source=&isctrip=' target="_blank">飞机票网购</a>|
+<a href='http://www.kuaidi100.com/' target="_blank">快递单号查询</a>|
+<a href='http://www.12306.cn/mormhweb/' target="_blank">12306网上火车票</a>|
+    </div>
+    <div class="Copyright">
+        <p>
+	安徽农夫商城电子商务有限公司&nbsp;版权所有</p><p>
+	全国热线：0556-6098989 &nbsp; &nbsp;0556-6098988（8:00-23:00）</p><p><a href="http://www.beianbeian.com/beianxinxi/cf15b678-ca72-4045-bc50-92b1cf054b85.html" target="_blank">皖ICP备14016985号-1</a> 安徽省桐城市开发区物流东路农夫商城</p><p><a href="http://www.ahaic-aq.gov.cn/" target="_blank"><img title="1" border="0" alt="1" src="../picture/20160601081044_2650.jpg" width="135" height="58"/><img title="2" border="0" alt="2" src="../picture/20141102004221_1300.png" width="135" height="58"/></a><img title="4" border="0" alt="4" src="../picture/20141102004326_1177.png"/><a href="http://www.anqing.cyberpolice.cn/" target="_blank"><img title="20141102004356_6374" border="0" alt="20141102004356_6374" src="../picture/20141103140502_3009.jpg"/><img title="QQ图片20141102004035" border="0" alt="QQ图片20141102004035" src="../picture/20141102004427_4532.png"/></a> </p><div style="width: 300px; margin: 0px auto; padding: 20px 0px;"><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34088102000126" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src style="float:left;"/> 
+	<p style="float:left;height:20px;line-height:20px;margin:0px 0px 0px 5px;color:#939393;"><img src="../picture/20160613101108_5625.png" alt=""/>皖公网安备 34088102000126号	</p></a> </div>
+         </div>
+    </div>
+</body>
+</html> 
+</form>
+
+
